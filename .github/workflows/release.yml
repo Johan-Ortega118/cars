@@ -4,9 +4,9 @@ name: release CI/CD
 on:
   # riggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ release ]
+    branches: [ ci-cd ]
   pull_request:
-    branches: [ release ]
+    branches: [ ci-cd ]
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
