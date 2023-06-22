@@ -1,0 +1,31 @@
+name: SonarCloud
+on:
+  push:
+    branches:
+      - ci-cd
+  workflow_dispatch:
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ci-cd branch
+        uses: actions/checkout@v3
+        with:
+          ref: ci-cd
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Scan with Sonar
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=Johan-Ortega118_cars
+            -Dsonar.organization=johan-ortega118
+            -Dsonar.branch.name=ci-cd
