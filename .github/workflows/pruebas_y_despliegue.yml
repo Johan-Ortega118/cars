@@ -20,7 +20,7 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
           with:
-            ref: release
+            ref: ci-cd
         - name: ZAP Scan
           uses: zaproxy/action-baseline@v0.6.1
           with:
