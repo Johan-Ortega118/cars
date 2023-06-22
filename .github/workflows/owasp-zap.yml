@@ -1,4 +1,4 @@
-name: Pruebas y Despliegue CI-CD
+name: OWASP ZAP
 on: push
 jobs:
   zap_scan:
