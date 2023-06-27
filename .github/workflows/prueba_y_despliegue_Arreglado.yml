@@ -1,4 +1,4 @@
-name: Pruebas y Despliegue CI-CD
+name: Pruebas y Despliegue Snyk Arreglado1
 on: 
   push:
     branches: [ "snyk-fix-5968607f7dc4e0ffdb5a77b0b5b0f41b"]
