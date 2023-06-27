@@ -1,9 +1,9 @@
 name: Pruebas y Despliegue nuevoSnyk
 on: 
   push:
-    branches: [ "snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3"]
+    branches: [ "snyk-fix_2"]
   pull_request:
-    branches: [ "snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3"]
+    branches: [ "snyk-fix_2"]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3 branch
         uses: actions/checkout@v3
         with:
-          ref: snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3
+          ref: snyk-fix_2
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -27,7 +27,7 @@ jobs:
           args: >
             -Dsonar.projectKey=Johan-Ortega118_cars
             -Dsonar.organization=johan-ortega118
-            -Dsonar.branch.name=snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3
+            -Dsonar.branch.name=snyk-fix_2
   security:
     runs-on: ubuntu-latest
     needs: build
@@ -48,7 +48,7 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
           with:
-            ref: snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3
+            ref: snyk-fix_2
         - name: ZAP Scan
           uses: zaproxy/action-baseline@v0.6.1
           with:
