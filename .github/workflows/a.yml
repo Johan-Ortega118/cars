@@ -1,4 +1,4 @@
-name: Pruebas y Despliegue nuevoSnyk
+name: Pruebas y Despliegue nuevoSnyk2
 on: 
   push:
     branches: [ "snyk-fix_2"]
@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout snyk-fix-b5bebd777a64b6a7bc7f68b59ecc77d3 branch
+      - name: Checkout snyk-fix_2 branch
         uses: actions/checkout@v3
         with:
           ref: snyk-fix_2
