@@ -1,4 +1,4 @@
-FROM python:3.12.0b3-slim
+FROM python:slim-bookworm
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /cars
